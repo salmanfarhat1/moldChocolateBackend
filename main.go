@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/salmanfarhat1/moldChocolateBackend/api"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Chocolate bar Backend")
-	})
-	fmt.Println("Server running on http://localhost:3000")
-	fmt.Println("Server is running and fmt let me print messages to the terminal")
-	http.ListenAndServe(":3000", nil)
+	r := mux.NewRouter()
+	r.HandleFunc("/", api.HelloHandler).Methods("GET")
+	fmt.Println("Server on http://localhost:3000")
+	http.ListenAndServe(":3000", r)
 }

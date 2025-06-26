@@ -1,4 +1,4 @@
-## Running PostgreSQL Locally on macOS
+                    ## Running PostgreSQL Locally on macOS
 
 To start and interact with your local PostgreSQL server, follow these steps:
 
@@ -23,4 +23,6 @@ psql postgres
 \list show all DBs
 \c DB_name list databases 
 \dt show tables 
+\d tableName shows the table header and types 
+\du is to check the list of users
 
