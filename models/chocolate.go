@@ -1,9 +1,11 @@
 package models
 
 type Chocolate struct {
-	ID          int    `json:"id"`
-	Name        string `json:"name"`
-	Ingredients string `json:"ingredients"` // ✅ correct
+	ID          int      `json:"id"`
+	Name        string   `json:"name"`
+	Ingredients string   `json:"ingredients"` // ✅ correct
+	PhotoUrls   []string `json:"photo_urls"`  // ✅ change to slice
+
 }
 type Variants struct {
 	ID          int     `json:"id"`
@@ -11,5 +13,4 @@ type Variants struct {
 	Size        string  `json:"size"`
 	Weight      float64 `json:"weight"`
 	Price       float64 `json:"price"`
-	PhotoUrls   string  `json:"photo_urls"`
 }
